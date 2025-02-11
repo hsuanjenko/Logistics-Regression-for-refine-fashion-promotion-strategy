@@ -28,6 +28,7 @@ This will allow Trojan Horse to focus its marketing efforts on high-probability 
 
 The following historical customer data is available for analysis:
 
+- **Success**: 0 = the mail does not lead to successful purchase, 1 = successful purchase
 - **Gender**: 0 = Male, 1 = Female
 - **Monetary (M)**: Total money spent at Trojan Horse over the past 5 years
 - **Recency (R)**: Months since last purchase
@@ -51,7 +52,7 @@ The logistic regression model helped quantify the relationships between these fe
 
 ### Model Equation
 The final model equation is:
-$Log(P1/P0) = -0.8276 - 0.8984 * Gender - 0.1127 * R - 0.4222 * Hipster + 0.9617 * ClassicGentleman + 0.4364 * Rugged$
+$Log(Success) = -0.8276 - 0.8984 * Gender - 0.1127 * R - 0.4222 * Hipster + 0.9617 * ClassicGentleman + 0.4364 * Rugged$
 
 ## Results and Conclusion
 
@@ -60,7 +61,7 @@ $Log(P1/P0) = -0.8276 - 0.8984 * Gender - 0.1127 * R - 0.4222 * Hipster + 0.9617
 - **SequentialFeatureSelector**: We used this technique to select the best 5 features based on **roc_auc** and forward selection.
 
 **Model Equation:**
-$Log(P1/P0) = -0.8276 - 0.8984 * Gender - 0.1127 * R - 0.4222 * Hipster + 0.9617 * ClassicGentleman + 0.4364 * Rugged$
+$Log(Success) = -0.8276 - 0.8984 * Gender - 0.1127 * R - 0.4222 * Hipster + 0.9617 * ClassicGentleman + 0.4364 * Rugged$
 
 - **Gender (0 = Male, 1 = Female)**: A negative coefficient (-0.8984) indicates that being female is associated with lower odds of purchasing the box.
 - **Recency (R)**: A negative coefficient (-0.1127) indicates that customers who made a purchase more recently are more likely to be profitable.
